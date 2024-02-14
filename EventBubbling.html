@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .child{
+            background-color: aqua;
+            border: 3px solid black;
+            padding: 34px;
+            margin: 34px;
+            cursor: pointer;
+        }
+        .childcontainer{
+            background-color: bisque;
+            padding: 14px;
+            margin: 14px;
+        }
+        .container{
+            background-color: rgb(255, 140, 0);
+            padding: 14px;
+            margin: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="childcontainer">
+            <div class="child">
+                I am The Child
+            </section>
+        </div>
+    </div>
+    <script>
+        let s = document.querySelector(".child")
+        s.addEventListener("click" , (e)=>{
+            e.stopPropagation()
+            alert("I am Child Box ")
+        })
+
+        let m = document.querySelector(".childcontainer")
+        m.addEventListener("click", (e)=>{
+            e.stopPropagation()
+            alert("I am Child Container ")
+        })
+
+        let n = document.querySelector(".container")
+        n.addEventListener("click", (e)=>{
+            e.stopPropagation()
+            alert("I am Container ")
+        })
+
+        const randomColor = ()=>{
+            let r = Math.ceil(0 + Math.random()*255)
+            let b = Math.ceil(0 + Math.random()*255)
+            let g = Math.ceil(0 + Math.random()*255)
+            return `rgb(${r},${g},${b})`
+        }
+
+        /*let a  = setInterval(() => {
+            m.style.background = randomColor();
+        }, 3000);
+
+        console.log(a)*/
+
+
+        clearInterval(1)
+
+        /*let a  = setTimeout(() => {
+            m.style.background = randomColor();
+        }, 3000);
+
+        console.log(a)*/m
+
+        clearTimeout(1)
+    
+    </script>
+</body>
+</html>
